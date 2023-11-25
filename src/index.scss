@@ -97,3 +97,21 @@ p {
 .app {
   padding: 40px;
 }
+
+.container {
+  max-width: $maxWidthContainer;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #555;
+}
+::-webkit-scrollbar-track {
+  background: #CDCDCD0D;
+  border-radius: 10px;
+}
