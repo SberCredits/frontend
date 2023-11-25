@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+
+.status {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  padding: 0 10px;
+  min-width: 120px;
+  width: max-content;
+  font-size: 12px;
+  font-family: $font-display;
+  color: $color-primary-white;
+  background-color: $color-primary-blue;
+  border-radius: 50px;
+
+  &-work {
+    color: $color-primary-black;
+    background-color: $color-primary-gray;
+  }
+
+  &-modification {
+    background-color: $color-primary-orange;
+  }
+
+  &-request {
+    background-color: $color-primary-black;
+  }
+}
