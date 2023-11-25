@@ -3,15 +3,22 @@
 .button {
   background-color: $color-primary-green;
   color: $color-primary-white;
-  width: 100%;
   max-width: 320px;
+  min-width: 200px;
   border-radius: 100px;
   height: 45px;
   line-height: 45px;
-  text-align: center;
   font-family: $font-display;
   font-size: 20px;
   transition: all 0.3s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  &.icon {
+    justify-content: space-between;
+  }
+
   &:hover {
     background-color: #02a145;
   }
