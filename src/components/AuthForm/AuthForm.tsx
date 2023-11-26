@@ -49,6 +49,8 @@ const AuthForm: FC = () => {
 
     const resp = await tokenRequest(formData);
 
+    console.log(resp);
+
     if ("data" in resp && resp.data) {
       const dataResponse = resp as { data: IAuthResponse };
       if (

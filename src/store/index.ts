@@ -3,7 +3,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import { authApi } from "@/api/authApi";
 import { apiService } from "@/api/authConfig";
 import { applicationApi } from "@/api/applicationApi";
-// TODO конфликты мидлвеиров
 import { apiService as applicationApiService } from "@/api/applicationConfig";
 
 export const store = configureStore({
@@ -12,10 +11,10 @@ export const store = configureStore({
     [applicationApi.reducerPath]: applicationApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(
+    getDefaultMiddleware().concat([
+      apiService.middleware,
       applicationApiService.middleware,
-      apiService.middleware
-    ),
+    ]),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
