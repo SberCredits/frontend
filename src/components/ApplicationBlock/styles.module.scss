@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.item {
+  &__title {
+    font-size: 18px;
+    font-family: $font-display;
+    margin: 0 0 10px 0;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+  &__element {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+  &__name {
+    color: rgba($color-primary-black, 0.6);
+  }
+}

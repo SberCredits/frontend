@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+.application {
+  padding: 120px 0;
+  &__title {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    font-family: $font-display;
+  }
+  &__items {
+    padding: 40px;
+    background-color: $color-primary-white;
+    border-radius: 8px;
+  }
+}

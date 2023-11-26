@@ -1,0 +1,10 @@
+{
+  "id": "Номер",
+  "middle_name": "Отчество",
+  "last_name": "Фамилия",
+  "first_name": "Имя",
+  "marital_status": "Семейное положение",
+  "birth_date": "Дата рождения",
+  "registration_address": "Адрес прописки",
+  "living_address": "Адрес проживания"
+}

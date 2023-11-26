@@ -1,5 +1,5 @@
 import { apiService } from "@/api/applicationConfig";
-import { IApplication } from "@/types/Application";
+import { ApplicationModel, IApplication } from "@/types/Application";
 import { generateRandomIP } from "@/helpers/generateRandomIP";
 
 export const applicationApi = apiService
@@ -8,12 +8,28 @@ export const applicationApi = apiService
   })
   .injectEndpoints({
     endpoints: (build) => ({
-      getApplications: build.query<IApplication[], void>({
-        query: () => ({
+      getApplications: build.query<
+        IApplication[],
+        { order_by: string | undefined; application_id__istartswith: string }
+      >({
+        query: ({ order_by, application_id__istartswith }) => ({
           headers: {
             "X-LOCATION": generateRandomIP(),
           },
           url: "/",
+          params: {
+            application_id__istartswith,
+            order_by: order_by || "-status",
+          },
+        }),
+        providesTags: ["Applications"],
+      }),
+      getApplicationByID: build.query<ApplicationModel, string | undefined>({
+        query: (id) => ({
+          headers: {
+            "X-LOCATION": generateRandomIP(),
+          },
+          url: `/${id}`,
         }),
         providesTags: ["Applications"],
       }),
@@ -42,5 +58,6 @@ export const applicationApi = apiService
 export const {
   useGetApplicationsQuery,
   useSetApplicationByIdMutation,
+  useGetApplicationByIDQuery,
   useCheckApplicationByIdQuery,
 } = applicationApi;

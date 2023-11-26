@@ -21,7 +21,7 @@ const Application: FC<IApplicationProps> = ({ number, user, status, date }) => {
 
   const handleClick = async () => {
     const formData = new FormData();
-    formData.append("status", "new");
+    formData.append("status", "modification");
 
     await setRequest({ id: number, data: formData });
   };
